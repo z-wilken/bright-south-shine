@@ -1,0 +1,114 @@
+[
+  {
+    "id": "module-1",
+    "title": "Depreciation Basics",
+    "description": "Learn how to calculate asset depreciation and understand its impact on your financial planning.",
+    "category": "finance",
+    "difficulty": "beginner",
+    "estimatedTime": "15 min",
+    "steps": [
+      {
+        "id": "step-1",
+        "title": "Understanding Depreciation",
+        "content": "Depreciation is the decrease in value of an asset over time. This concept is crucial for understanding the true cost of ownership for vehicles, equipment, and other assets.",
+        "type": "text"
+      },
+      {
+        "id": "step-2",
+        "title": "Calculate Your Car's Depreciation",
+        "content": "Use this calculator to determine how much value your car loses each year. This helps in making informed decisions about buying new vs. used vehicles.",
+        "type": "calculator"
+      },
+      {
+        "id": "step-3",
+        "title": "Making Smart Purchase Decisions",
+        "content": "Now that you understand depreciation, consider how it affects major purchases. A R300,000 car that depreciates 20% annually will lose R60,000 in its first year alone.",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "id": "module-2",
+    "title": "Emergency Fund Planning",
+    "description": "Build a solid emergency fund that can weather any financial storm.",
+    "category": "finance",
+    "difficulty": "beginner",
+    "estimatedTime": "20 min",
+    "steps": [
+      {
+        "id": "step-1",
+        "title": "Why Emergency Funds Matter",
+        "content": "An emergency fund is your financial safety net. It protects you from debt when unexpected expenses arise, like medical bills or job loss.",
+        "type": "text"
+      },
+      {
+        "id": "step-2",
+        "title": "Calculate Your Target Amount",
+        "content": "Most experts recommend 3-6 months of expenses. Calculate your monthly essential expenses (rent, food, utilities, minimum debt payments) and multiply by your comfort level.",
+        "type": "calculator"
+      },
+      {
+        "id": "step-3",
+        "title": "Building Your Fund Gradually",
+        "content": "Start small - even R500 can handle minor emergencies. Automate transfers to make saving effortless. Treat your emergency fund contributions like a non-negotiable bill.",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "id": "module-3",
+    "title": "Mindful Spending Habits",
+    "description": "Develop awareness around your spending patterns and build healthier financial habits.",
+    "category": "mindset",
+    "difficulty": "intermediate",
+    "estimatedTime": "25 min",
+    "steps": [
+      {
+        "id": "step-1",
+        "title": "The Psychology of Spending",
+        "content": "Our spending is often driven by emotions, social pressure, and unconscious habits. Understanding these triggers is the first step to mindful money management.",
+        "type": "text"
+      },
+      {
+        "id": "step-2",
+        "title": "The 24-Hour Rule",
+        "content": "Before making any non-essential purchase over R200, wait 24 hours. This simple pause often reveals whether the purchase aligns with your values and goals.",
+        "type": "text"
+      },
+      {
+        "id": "step-3",
+        "title": "Values-Based Spending",
+        "content": "Identify your top 5 values (family, health, education, etc.). Evaluate purchases against these values. Money spent on things you truly value feels less like expense and more like investment.",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "id": "module-4",
+    "title": "Career Advancement Strategy",
+    "description": "Build a strategic approach to advancing your career and increasing your earning potential.",
+    "category": "career",
+    "difficulty": "intermediate",
+    "estimatedTime": "30 min",
+    "steps": [
+      {
+        "id": "step-1",
+        "title": "Assess Your Current Position",
+        "content": "Honestly evaluate your skills, experience, and market value. Use salary surveys and job postings to understand your worth in the current market.",
+        "type": "text"
+      },
+      {
+        "id": "step-2",
+        "title": "Identify Growth Opportunities",
+        "content": "Look for skills gaps in your industry. What skills are in high demand? What certifications or training could increase your value? Focus on skills that multiply your impact.",
+        "type": "text"
+      },
+      {
+        "id": "step-3",
+        "title": "Build Your Professional Network",
+        "content": "Networking isn't about using people - it's about building genuine professional relationships. Attend industry events, engage on LinkedIn, and always look for ways to help others first.",
+        "type": "text"
+      }
+    ]
+  }
+]

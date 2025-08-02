@@ -1,0 +1,58 @@
+[
+  {
+    "id": "tip-1",
+    "title": "Track One Expense Today",
+    "content": "Write down one purchase you make today and ask yourself: Was this necessary? This simple habit builds awareness of your spending patterns.",
+    "category": "finance",
+    "difficulty": "beginner",
+    "estimatedTime": "2 min"
+  },
+  {
+    "id": "tip-2",
+    "title": "Practice the 5-4-3-2-1 Grounding Technique",
+    "content": "Notice 5 things you can see, 4 things you can touch, 3 things you can hear, 2 things you can smell, and 1 thing you can taste. Perfect for reducing financial anxiety.",
+    "category": "mindset",
+    "difficulty": "beginner",
+    "estimatedTime": "3 min"
+  },
+  {
+    "id": "tip-3",
+    "title": "Update Your LinkedIn Headline",
+    "content": "Spend 5 minutes crafting a compelling LinkedIn headline that reflects your current goals. Small career investments compound over time.",
+    "category": "career",
+    "difficulty": "beginner",
+    "estimatedTime": "5 min"
+  },
+  {
+    "id": "tip-4",
+    "title": "Calculate Your Daily Coffee Cost",
+    "content": "Multiply your daily coffee expense by 365. This isn't about giving up coffee, but understanding the annual impact of small daily expenses.",
+    "category": "finance",
+    "difficulty": "beginner",
+    "estimatedTime": "2 min"
+  },
+  {
+    "id": "tip-5",
+    "title": "Practice Gratitude for Your Progress",
+    "content": "List three financial or personal achievements from this year, no matter how small. Recognizing progress builds momentum for future goals.",
+    "category": "mindset",
+    "difficulty": "beginner",
+    "estimatedTime": "3 min"
+  },
+  {
+    "id": "tip-6",
+    "title": "Research One New Skill",
+    "content": "Spend 10 minutes researching a skill that could advance your career. Knowledge is the best investment you can make in yourself.",
+    "category": "career",
+    "difficulty": "intermediate",
+    "estimatedTime": "10 min"
+  },
+  {
+    "id": "tip-7",
+    "title": "Set Up One Automatic Transfer",
+    "content": "Automate a R50 weekly transfer to a separate savings account. Small, consistent actions create significant long-term results.",
+    "category": "finance",
+    "difficulty": "intermediate",
+    "estimatedTime": "5 min"
+  }
+]
