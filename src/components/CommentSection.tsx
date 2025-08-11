@@ -54,18 +54,44 @@ const CommentSection: React.FC<CommentSectionProps> = ({
 
   const displayComments = comments.length > 0 ? comments : mockComments;
 
-  const handleSubmitComment = () => {
-    if (!newComment.trim()) return;
+  const handleSubmitComment = async () => {
+    if (!newComment.trim() || isSubmitting) return;
     
     setIsSubmitting(true);
     
-    // TODO: Implement actual comment submission
-    setTimeout(() => {
-      onAddComment?.(newComment);
+    try {
+      // Simulate API call delay
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      // Create comment object and store locally
+      const comment = {
+        _id: `comment-${Date.now()}`,
+        storyId,
+        userId: 'current-user',
+        author: 'Current User',
+        content: newComment,
+        createdAt: Date.now()
+      };
+      
+      // Store in localStorage temporarily
+      const storyComments = JSON.parse(localStorage.getItem(`comments-${storyId}`) || '[]');
+      storyComments.unshift(comment);
+      localStorage.setItem(`comments-${storyId}`, JSON.stringify(storyComments));
+      
+      // Clear form
       setNewComment('');
+      
+      // Call parent callback
+      onAddComment?.(newComment);
+      
+      // Force page refresh to show new comment (simple approach)
+      window.location.reload();
+      
+    } catch (error) {
+      console.error('Failed to submit comment:', error);
+    } finally {
       setIsSubmitting(false);
-      console.log('Comment submitted:', { storyId, content: newComment });
-    }, 500);
+    }
   };
 
   const toggleCommentExpansion = (commentId: string) => {
@@ -206,7 +232,19 @@ const CommentSection: React.FC<CommentSectionProps> = ({
                         <Button
                           variant="ghost"
                           size="sm"
-                          onClick={() => onLikeComment?.(comment._id)}
+                          onClick={() => {
+                            // Simple like functionality with localStorage
+                            const likedComments = JSON.parse(localStorage.getItem('likedComments') || '[]');
+                            const isLiked = likedComments.includes(comment._id);
+                            if (isLiked) {
+                              const filtered = likedComments.filter((id: string) => id !== comment._id);
+                              localStorage.setItem('likedComments', JSON.stringify(filtered));
+                            } else {
+                              likedComments.push(comment._id);
+                              localStorage.setItem('likedComments', JSON.stringify(likedComments));
+                            }
+                            onLikeComment?.(comment._id);
+                          }}
                           className="h-auto p-0 text-muted-foreground hover:text-accent"
                         >
                           <Heart size={14} className="mr-1" />

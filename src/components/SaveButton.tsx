@@ -18,13 +18,28 @@ const SaveButton: React.FC<SaveButtonProps> = ({
   onSave,
   size = 'sm'
 }) => {
-  const [isSaved, setIsSaved] = useState(initialSaved);
+  // Check localStorage for initial saved state
+  const checkSavedState = () => {
+    const savedItems = JSON.parse(localStorage.getItem('savedItems') || '[]');
+    return savedItems.some((item: any) => item.id === itemId) || initialSaved;
+  };
+  
+  const [isSaved, setIsSaved] = useState(checkSavedState);
   const [showFeedback, setShowFeedback] = useState(false);
 
   const handleSave = () => {
-    // TODO: Implement actual save functionality with backend
     const newSavedState = !isSaved;
     setIsSaved(newSavedState);
+    
+    // Store in localStorage temporarily
+    const savedItems = JSON.parse(localStorage.getItem('savedItems') || '[]');
+    if (newSavedState) {
+      savedItems.push({ id: itemId, type: itemType, savedAt: Date.now() });
+    } else {
+      const index = savedItems.findIndex((item: any) => item.id === itemId);
+      if (index > -1) savedItems.splice(index, 1);
+    }
+    localStorage.setItem('savedItems', JSON.stringify(savedItems));
     
     // Show feedback animation
     setShowFeedback(true);
@@ -32,9 +47,6 @@ const SaveButton: React.FC<SaveButtonProps> = ({
     
     // Call parent callback
     onSave?.(itemId, newSavedState);
-    
-    // TODO: Store in user's savedItems array
-    console.log(`${newSavedState ? 'Saved' : 'Unsaved'} ${itemType}:`, itemId);
   };
 
   return (

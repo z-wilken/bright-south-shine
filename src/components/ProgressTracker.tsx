@@ -11,7 +11,8 @@ import {
   Flame,
   Star,
   TrendingUp,
-  Award
+  Award,
+  Share2
 } from 'lucide-react';
 import { UserProgress } from '@/types';
 import ShareButton from './ShareButton';
@@ -251,13 +252,33 @@ const ProgressTracker: React.FC<ProgressTrackerProps> = ({
                       </Badge>
                     )}
                     <div className="mt-2">
-                      <ShareButton
-                        url={`${window.location.origin}/profile`}
-                        title={`I just earned the "${badge.name}" badge!`}
-                        hashtags={['BrightWealth', 'FinancialGrowth', 'Achievement']}
-                        size="sm"
+                      <Button
                         variant="ghost"
-                      />
+                        size="sm"
+                        onClick={() => {
+                          const shareText = `I just earned the "${badge.name}" badge on BrightWealth! 🏆`;
+                          const shareUrl = `${window.location.origin}/achievements`;
+                          
+                          if (navigator.share) {
+                            navigator.share({
+                              title: `Achievement: ${badge.name}`,
+                              text: shareText,
+                              url: shareUrl
+                            });
+                          } else {
+                            navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
+                            // Show success feedback
+                            const feedback = document.createElement('div');
+                            feedback.textContent = 'Achievement shared!';
+                            feedback.className = 'fixed top-4 right-4 bg-accent text-accent-foreground px-3 py-2 rounded-md shadow-lg z-50 animate-fade-in';
+                            document.body.appendChild(feedback);
+                            setTimeout(() => feedback.remove(), 2000);
+                          }
+                        }}
+                        className="text-muted-foreground hover:text-accent"
+                      >
+                        <Share2 size={14} />
+                      </Button>
                     </div>
                   </div>
                 );

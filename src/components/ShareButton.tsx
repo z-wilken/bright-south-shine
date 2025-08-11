@@ -44,8 +44,15 @@ const ShareButton: React.FC<ShareButtonProps> = ({
   };
 
   const handleShare = (platform: string) => {
-    // TODO: Add analytics tracking for shares
-    console.log(`Sharing to ${platform}:`, { url, title, hashtags });
+    // Track share event in localStorage
+    const shareEvents = JSON.parse(localStorage.getItem('shareEvents') || '[]');
+    shareEvents.push({
+      platform,
+      url,
+      title,
+      timestamp: Date.now()
+    });
+    localStorage.setItem('shareEvents', JSON.stringify(shareEvents));
     
     if (platform === 'copy') {
       handleCopyLink();
